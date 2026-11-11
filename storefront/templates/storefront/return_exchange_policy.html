@@ -1,0 +1,65 @@
+{% extends "storefront/base.html" %}
+
+{% block title %}Delivery &amp; Return Policy | Tanda{% endblock %}
+
+{% block content %}
+{# Change the delivery charges here, in one place. #}
+{% with inside_dhaka="80" outside_dhaka="130" %}
+<section class="policy-page container py-5">
+    <div class="policy-card mx-auto">
+        <p class="policy-eyebrow">TANDA CUSTOMER CARE</p>
+        <h1>Delivery &amp; Return Policy</h1>
+        <p class="policy-intro">We want you to receive the right product in good condition. Please read these terms before placing an order.</p>
+
+        <div class="policy-glance">
+            <div class="glance-card"><strong>3 days</strong><span>Return &amp; exchange window</span></div>
+            <div class="glance-card"><strong>Free return</strong><span>When it is our mistake</span></div>
+            <div class="glance-card"><strong>Inspect</strong><span>Check your product on delivery</span></div>
+        </div>
+
+        <section>
+            <h2>Delivery Coverage &amp; Charges</h2>
+            <p>We deliver all over Bangladesh.</p>
+            <div class="charge-grid">
+                <div class="charge-card"><i class="bi bi-geo-alt" aria-hidden="true"></i><span>Inside Dhaka</span><strong>৳{{ inside_dhaka }}</strong></div>
+                <div class="charge-card"><i class="bi bi-truck" aria-hidden="true"></i><span>Outside Dhaka</span><strong>৳{{ outside_dhaka }}</strong></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>How Payment Works</h2>
+            <ul class="policy-steps">
+                <li><i class="bi bi-chat-dots" aria-hidden="true"></i><span>Message us to confirm your product and delivery details.</span></li>
+                <li><i class="bi bi-wallet2" aria-hidden="true"></i><span>The delivery charge is paid in advance. We will tell you how when we confirm your order.</span></li>
+                <li><i class="bi bi-cash-coin" aria-hidden="true"></i><span>You pay the product price when it is delivered to you.</span></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Inspect at Delivery</h2>
+            <p>Please inspect your product in front of the delivery agent when it arrives.</p>
+        </section>
+
+        <section>
+            <h2>Damaged, Defective, or Incorrect Items</h2>
+            <p>If an item is damaged, defective, or incorrect, you may return it immediately to the delivery agent. You will not need to pay any delivery charge for that immediate return.</p>
+        </section>
+
+        <section>
+            <h2>3-Day Return &amp; Exchange Window</h2>
+            <p>Returns and exchanges are accepted within 3 days of delivery when the item is unused, unwashed, and returned in its original condition with all packaging and tags intact.</p>
+        </section>
+
+        <section>
+            <h2>Return Delivery Fees</h2>
+            <ul>
+                <li>If the return or exchange is due to a Tanda error, such as a damaged or wrong item, Tanda covers the delivery fees.</li>
+                <li>For a change of mind or general size/color exchange, the customer covers the delivery charges.</li>
+            </ul>
+        </section>
+
+        <a class="btn btn-primary mt-3" href="https://wa.me/message/WFXRQUMH3FNZE1" target="_blank" rel="noopener noreferrer">Ask us on WhatsApp</a>
+    </div>
+</section>
+{% endwith %}
+{% endblock %}

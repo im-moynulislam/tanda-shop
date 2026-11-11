@@ -1,0 +1,30 @@
+# Python and virtual environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local secrets and environment configuration
+.env
+.env.*
+!.env.example
+
+# Local database and user-uploaded files
+db.sqlite3
+db_backup*.sqlite3
+media/
+staticfiles/
+
+# Test, coverage, and log output
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+test-results.txt
+
+# IDE and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

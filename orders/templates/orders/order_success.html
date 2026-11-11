@@ -1,0 +1,81 @@
+{% extends "storefront/base.html" %}
+
+{% block title %}
+Order Confirmed | Tanda
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+
+    <div class="card mx-auto" style="max-width: 720px;">
+
+        <div class="card-body p-4 p-md-5">
+
+            <div class="text-center mb-4">
+
+                <h1 class="h2 fw-bold text-success">
+                    Order Confirmed
+                </h1>
+
+                <p class="text-secondary mb-0">
+                    Thank you, {{ order.customer_name }}.
+                </p>
+
+            </div>
+
+            <p>
+                Your order number is:
+                <strong>#{{ order.id }}</strong>
+            </p>
+
+            <p>
+                Payment method:
+                <strong>Cash on Delivery</strong>
+            </p>
+
+            <h2 class="h5 fw-bold mt-4">
+                Order Items
+            </h2>
+
+            {% for item in order.items.all %}
+
+                <div class="d-flex justify-content-between py-2 border-bottom">
+
+                    <span>
+                        {{ item.product_name }} × {{ item.quantity }}
+                    </span>
+
+                    <span>
+                        ৳{{ item.product_price|floatformat:"-2" }}
+                    </span>
+
+                </div>
+
+            {% endfor %}
+
+            <div class="d-flex justify-content-between mt-4">
+
+                <span class="fw-bold">Total</span>
+
+                <span class="fw-bold fs-5">
+                    ৳{{ order.total_amount|floatformat:"-2" }}
+                </span>
+
+            </div>
+
+            <p class="text-secondary small mt-4">
+                We will contact you using {{ order.phone_number }}
+                to confirm delivery.
+            </p>
+
+            <a href="{% url 'home' %}"
+               class="btn btn-primary w-100 mt-3">
+                Continue Shopping
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

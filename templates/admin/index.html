@@ -1,0 +1,179 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<div class="dashboard-summary">
+    <div class="dashboard-card dashboard-card-action">
+        <span class="dashboard-label">New message order</span>
+        <strong>+</strong>
+        <a href="{% url 'store_admin:orders_order_add' %}">Record a WhatsApp or Messenger order</a>
+    </div>
+    <div class="dashboard-card">
+        <span class="dashboard-label">Pending orders</span>
+        <strong>{{ dashboard_counts.pending_orders }}</strong>
+        <a href="{% url 'store_admin:orders_order_changelist' %}?status__exact=pending">Review pending orders</a>
+    </div>
+    <div class="dashboard-card">
+        <span class="dashboard-label">Confirmed orders</span>
+        <strong>{{ dashboard_counts.confirmed_orders }}</strong>
+        <a href="{% url 'store_admin:orders_order_changelist' %}?status__exact=confirmed">View confirmed orders</a>
+    </div>
+    <div class="dashboard-card">
+        <span class="dashboard-label">Unpaid orders</span>
+        <strong>{{ dashboard_counts.unpaid_orders }}</strong>
+        <a href="{% url 'store_admin:orders_order_changelist' %}?payment_status__exact=unpaid">Review unpaid orders</a>
+    </div>
+    <div class="dashboard-card">
+        <span class="dashboard-label">Delivery advance paid</span>
+        <strong>{{ dashboard_counts.delivery_advance_paid_orders }}</strong>
+        <a href="{% url 'store_admin:orders_order_changelist' %}?delivery_advance_status__exact=paid">Ready to process</a>
+    </div>
+    <div class="dashboard-card">
+        <span class="dashboard-label">Out of stock</span>
+        <strong>{{ dashboard_counts.out_of_stock_products }}</strong>
+        <a href="{% url 'store_admin:catalog_product_changelist' %}?stock_status=out_of_stock">View products</a>
+    </div>
+    <div class="dashboard-card">
+        <span class="dashboard-label">Confirmed, no courier</span>
+        <strong>{{ dashboard_counts.confirmed_without_courier }}</strong>
+        <a href="{% url 'store_admin:orders_order_changelist' %}?status__exact=confirmed&courier_name__exact=">Assign courier</a>
+    </div>
+    <div class="dashboard-card">
+        <span class="dashboard-label">Ready to dispatch</span>
+        <strong>{{ dashboard_counts.ready_to_dispatch }}</strong>
+        <a href="{% url 'store_admin:orders_order_changelist' %}?status__exact=confirmed">View confirmed orders</a>
+    </div>
+    <div class="dashboard-card">
+        <span class="dashboard-label">Shipped orders</span>
+        <strong>{{ dashboard_counts.shipped_orders }}</strong>
+        <a href="{% url 'store_admin:orders_order_changelist' %}?status__exact=shipped">Track shipments</a>
+    </div>
+    <div class="dashboard-card">
+        <span class="dashboard-label">Low stock</span>
+        <strong>{{ dashboard_counts.low_stock_products }}</strong>
+        <a href="{% url 'store_admin:catalog_product_changelist' %}?stock_status=low_stock">Restock products</a>
+    </div>
+</div>
+
+<section class="dashboard-section dashboard-reporting">
+    <div class="dashboard-card">
+        <span class="dashboard-label">Open order value</span>
+        <strong>৳{{ dashboard_totals.open_order_value|floatformat:"-2" }}</strong>
+        <span>All non-cancelled orders; this is not cash collected.</span>
+    </div>
+    <div class="dashboard-card">
+        <span class="dashboard-label">Delivered value this week</span>
+        <strong>৳{{ dashboard_totals.delivered_value_this_week|floatformat:"-2" }}</strong>
+        <span>{{ dashboard_counts.delivered_today }} delivered today · {{ dashboard_counts.cancelled_this_week }} cancelled this week</span>
+    </div>
+</section>
+
+<section class="dashboard-section">
+    <h2>Recent pending orders</h2>
+    {% if recent_pending_orders %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Order</th>
+                    <th>Customer</th>
+                    <th>Total</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in recent_pending_orders %}
+                    <tr>
+                        <td><a href="{% url 'store_admin:orders_order_change' order.pk %}">#{{ order.pk }}</a></td>
+                        <td>{{ order.customer_name }}</td>
+                        <td>৳{{ order.total_amount }}</td>
+                        <td>{{ order.created_at|date:"j M Y, P" }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No pending orders need attention.</p>
+    {% endif %}
+</section>
+
+<section class="dashboard-section dashboard-split">
+    <div>
+        <h2>Ready to dispatch</h2>
+        {% if ready_to_dispatch_orders %}
+            <table>
+                <thead><tr><th>Order</th><th>Customer</th><th>Courier</th><th>Total</th></tr></thead>
+                <tbody>{% for order in ready_to_dispatch_orders %}<tr>
+                    <td><a href="{% url 'store_admin:orders_order_change' order.pk %}">#{{ order.pk }}</a></td>
+                    <td>{{ order.customer_name }}</td><td>{{ order.courier_name }}</td><td>৳{{ order.total_amount }}</td>
+                </tr>{% endfor %}</tbody>
+            </table>
+        {% else %}<p>No confirmed orders have a courier assigned yet.</p>{% endif %}
+    </div>
+    <div>
+        <h2>Low stock products</h2>
+        {% if low_stock_products %}
+            <table>
+                <thead><tr><th>Product</th><th>Stock</th><th>Restock at</th></tr></thead>
+                <tbody>{% for product in low_stock_products %}<tr>
+                    <td><a href="{% url 'store_admin:catalog_product_change' product.pk %}">{{ product.name }}</a></td>
+                    <td>{{ product.stock }}</td><td>{{ product.low_stock_threshold }}</td>
+                </tr>{% endfor %}</tbody>
+            </table>
+        {% else %}<p>All products are above their restock threshold.</p>{% endif %}
+    </div>
+</section>
+
+<section class="dashboard-section">
+    <div class="section-heading">
+        <h2>Products</h2>
+        <div class="quick-actions">
+            <a class="button" href="{% url 'store_admin:catalog_product_add' %}">Add product</a>
+            <a class="button" href="{% url 'store_admin:catalog_product_changelist' %}">View all products</a>
+            <a class="button" href="{% url 'store_admin:catalog_category_add' %}">Add category</a>
+            <a class="button" href="{% url 'store_admin:catalog_category_changelist' %}">View categories</a>
+        </div>
+    </div>
+    {% if recent_products %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Available</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in recent_products %}
+                    <tr>
+                        <td><a href="{% url 'store_admin:catalog_product_change' product.pk %}">{{ product.name }}</a></td>
+                        <td>{{ product.category|default:"—" }}</td>
+                        <td>৳{{ product.price }}</td>
+                        <td>{{ product.stock }}</td>
+                        <td>{% if product.is_available %}Yes{% else %}No{% endif %}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No products have been added yet. Use <strong>Add product</strong> to create your first product.</p>
+    {% endif %}
+</section>
+
+{{ block.super }}
+
+<style>
+    .dashboard-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 28px; }
+    .dashboard-card { background: var(--body-bg); border: 1px solid var(--hairline-color); border-radius: 6px; padding: 18px; }
+    .dashboard-card-action { border-color: var(--link-fg); }
+    .dashboard-card strong { display: block; font-size: 2rem; margin: 8px 0; }
+    .dashboard-label { color: var(--body-quiet-color); font-weight: 600; }
+    .dashboard-section { margin-bottom: 28px; }
+    .dashboard-reporting, .dashboard-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .dashboard-reporting .dashboard-card span:last-child { color: var(--body-quiet-color); display: block; }
+    .dashboard-section table { width: 100%; }
+    .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .quick-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .quick-actions .button { margin: 0; }
+</style>
+{% endblock %}

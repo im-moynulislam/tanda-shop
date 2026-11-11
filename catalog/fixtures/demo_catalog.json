@@ -1,0 +1,659 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Electronics",
+      "slug": "electronics",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Fashion",
+      "slug": "fashion",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Home & Kitchen",
+      "slug": "home-kitchen",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "True Wireless Earbuds",
+      "category": 1,
+      "slug": "true-wireless-earbuds",
+      "description": "Compact wireless earbuds with a charging case for everyday listening.",
+      "price": "990.00",
+      "original_price": "1190.00",
+      "stock": 24,
+      "low_stock_threshold": 3,
+      "is_available": true,
+      "is_featured": true,
+      "rating": null,
+      "review_count": 0,
+      "created_at": "2026-11-07T06:34:06.506290Z",
+      "updated_at": "2026-11-07T06:34:06.506321Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Active Smart Watch",
+      "category": 1,
+      "slug": "active-smart-watch",
+      "description": "A modern smartwatch with activity tracking and notification support.",
+      "price": "1190.00",
+      "original_price": "1390.00",
+      "stock": 18,
+      "low_stock_threshold": 3,
+      "is_available": true,
+      "is_featured": false,
+      "rating": null,
+      "review_count": 0,
+      "created_at": "2026-11-07T06:34:06.520071Z",
+      "updated_at": "2026-11-07T06:34:06.520097Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "Mini Bluetooth Speaker",
+      "category": 1,
+      "slug": "mini-bluetooth-speaker",
+      "description": "Portable speaker with clear sound for music at home or outdoors.",
+      "price": "890.00",
+      "original_price": "1090.00",
+      "stock": 20,
+      "low_stock_threshold": 3,
+      "is_available": true,
+      "is_featured": false,
+      "rating": null,
+      "review_count": 0,
+      "created_at": "2026-11-07T06:34:06.526168Z",
+      "updated_at": "2026-11-07T06:34:06.526192Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "Fast Charging Power Bank",
+      "category": 1,
+      "slug": "fast-charging-power-bank",
+      "description": "Reliable portable power for phones and small devices on busy days.",
+      "price": "1090.00",
+      "original_price": "1290.00",
+      "stock": 16,
+      "low_stock_threshold": 3,
+      "is_available": true,
+      "is_featured": true,
+      "rating": null,
+      "review_count": 0,
+      "created_at": "2026-11-07T06:34:06.531770Z",
+      "updated_at": "2026-11-07T06:34:06.531793Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "LED Ring Light",
+      "category": 1,
+      "slug": "led-ring-light",
+      "description": "Adjustable lighting for video calls, content creation, and product photos.",
+      "price": "790.00",
+      "original_price": "950.00",
+      "stock": 14,
+      "low_stock_threshold": 3,
+      "is_available": true,
+      "is_featured": false,
+      "rating": null,
+      "review_count": 0,
+      "created_at": "2026-11-07T06:34:06.538387Z",
+      "updated_at": "2026-11-07T06:34:06.538409Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "name": "Classic Cotton T-Shirt",
+      "category": 2,
+      "slug": "classic-cotton-t-shirt",
+      "description": "Comfortable everyday cotton T-shirt with a clean, versatile style.",
+      "price": "750.00",
+      "original_price": "890.00",
+      "stock": 30,
+      "low_stock_threshold": 3,
+      "is_available": true,
+      "is_featured": false,
+      "rating": null,
+      "review_count": 0,
+      "created_at": "2026-11-07T06:34:06.543297Z",
+      "updated_at": "2026-11-07T06:34:06.543318Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "name": "Everyday Denim Jeans",
+      "category": 2,
+      "slug": "everyday-denim-jeans",
+      "description": "Durable casual denim designed for regular wear.",
+      "price": "1190.00",
+      "original_price": "1390.00",
+      "stock": 22,
+      "low_stock_threshold": 3,
+      "is_available": true,
+      "is_featured": true,
+      "rating": null,
+      "review_count": 0,
+      "created_at": "2026-11-07T06:34:06.549497Z",
+      "updated_at": "2026-11-07T06:34:06.549520Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+      "name": "Urban Canvas Backpack",
+      "category": 2,
+      "slug": "urban-canvas-backpack",
+      "description": "A practical backpack for daily essentials, study, or travel.",
+      "price": "990.00",
+      "original_price": "1190.00",
+      "stock": 14,
+      "low_stock_threshold": 3,
+      "is_available": true,
+      "is_featured": false,
+      "rating": null,
+      "review_count": 0,
+      "created_at": "2026-11-07T06:34:06.554638Z",
+      "updated_at": "2026-11-07T06:34:06.554660Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+      "name": "Minimalist Analog Watch",
+      "category": 2,
+      "slug": "minimalist-analog-watch",
+      "description": "A clean analog watch that pairs easily with casual outfits.",
+      "price": "1100.00",
+      "original_price": "1290.00",
+      "stock": 11,
+      "low_stock_threshold": 3,
+      "is_available": true,
+      "is_featured": false,
+      "rating": null,
+      "review_count": 0,
+      "created_at": "2026-11-07T06:34:06.559255Z",
+      "updated_at": "2026-11-07T06:34:06.559276Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+      "name": "Casual Canvas Sneakers",
+      "category": 2,
+      "slug": "casual-canvas-sneakers",
+      "description": "Lightweight sneakers for comfortable everyday movement.",
+      "price": "1150.00",
+      "original_price": "1350.00",
+      "stock": 18,
+      "low_stock_threshold": 3,
+      "is_available": true,
+      "is_featured": true,
+      "rating": null,
+      "review_count": 0,
+      "created_at": "2026-11-07T06:34:06.564351Z",
+      "updated_at": "2026-11-07T06:34:06.564367Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 13,
+    "fields": {
+      "name": "Non-Stick Frying Pan",
+      "category": 3,
+      "slug": "non-stick-frying-pan",
+      "description": "A versatile non-stick frying pan for simple daily cooking.",
+      "price": "990.00",
+      "original_price": "1190.00",
+      "stock": 15,
+      "low_stock_threshold": 3,
+      "is_available": true,
+      "is_featured": false,
+      "rating": null,
+      "review_count": 0,
+      "created_at": "2026-11-07T06:34:06.568835Z",
+      "updated_at": "2026-11-07T06:34:06.568856Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 14,
+    "fields": {
+      "name": "Insulated Water Bottle",
+      "category": 3,
+      "slug": "insulated-water-bottle",
+      "description": "Reusable insulated bottle that helps keep drinks at the right temperature.",
+      "price": "790.00",
+      "original_price": "950.00",
+      "stock": 27,
+      "low_stock_threshold": 3,
+      "is_available": true,
+      "is_featured": false,
+      "rating": null,
+      "review_count": 0,
+      "created_at": "2026-11-07T06:34:06.573294Z",
+      "updated_at": "2026-11-07T06:34:06.573310Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 15,
+    "fields": {
+      "name": "Airtight Food Storage Set",
+      "category": 3,
+      "slug": "airtight-food-storage-set",
+      "description": "Stackable containers to help organize dry foods and leftovers.",
+      "price": "890.00",
+      "original_price": "1090.00",
+      "stock": 14,
+      "low_stock_threshold": 3,
+      "is_available": true,
+      "is_featured": true,
+      "rating": null,
+      "review_count": 0,
+      "created_at": "2026-11-07T06:34:06.577019Z",
+      "updated_at": "2026-11-07T06:34:06.577042Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 16,
+    "fields": {
+      "name": "Multipurpose Kitchen Knife Set",
+      "category": 3,
+      "slug": "multipurpose-kitchen-knife-set",
+      "description": "Useful kitchen knife set for everyday food preparation.",
+      "price": "1090.00",
+      "original_price": "1290.00",
+      "stock": 9,
+      "low_stock_threshold": 3,
+      "is_available": true,
+      "is_featured": false,
+      "rating": null,
+      "review_count": 0,
+      "created_at": "2026-11-07T06:34:06.583225Z",
+      "updated_at": "2026-11-07T06:34:06.583254Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 17,
+    "fields": {
+      "name": "Adjustable LED Desk Lamp",
+      "category": 3,
+      "slug": "adjustable-led-desk-lamp",
+      "description": "Compact desk lamp with adjustable light for reading and work.",
+      "price": "950.00",
+      "original_price": "1150.00",
+      "stock": 11,
+      "low_stock_threshold": 3,
+      "is_available": true,
+      "is_featured": false,
+      "rating": null,
+      "review_count": 0,
+      "created_at": "2026-11-07T06:34:06.588489Z",
+      "updated_at": "2026-11-07T06:34:06.588508Z"
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 7,
+    "fields": {
+      "product": 3,
+      "image": "products/true-wireless-earbuds-1.jpg",
+      "alt_text": "True Wireless Earbuds, view 1",
+      "is_primary": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 8,
+    "fields": {
+      "product": 3,
+      "image": "products/true-wireless-earbuds-2.jpg",
+      "alt_text": "True Wireless Earbuds, view 2",
+      "is_primary": false,
+      "display_order": 1
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 9,
+    "fields": {
+      "product": 4,
+      "image": "products/active-smart-watch-1.jpg",
+      "alt_text": "Active Smart Watch, view 1",
+      "is_primary": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 10,
+    "fields": {
+      "product": 4,
+      "image": "products/active-smart-watch-2.jpg",
+      "alt_text": "Active Smart Watch, view 2",
+      "is_primary": false,
+      "display_order": 1
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 11,
+    "fields": {
+      "product": 5,
+      "image": "products/mini-bluetooth-speaker-1.jpg",
+      "alt_text": "Mini Bluetooth Speaker, view 1",
+      "is_primary": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 12,
+    "fields": {
+      "product": 5,
+      "image": "products/mini-bluetooth-speaker-2.jpg",
+      "alt_text": "Mini Bluetooth Speaker, view 2",
+      "is_primary": false,
+      "display_order": 1
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 13,
+    "fields": {
+      "product": 6,
+      "image": "products/fast-charging-power-bank-1.jpg",
+      "alt_text": "Fast Charging Power Bank, view 1",
+      "is_primary": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 14,
+    "fields": {
+      "product": 6,
+      "image": "products/fast-charging-power-bank-2.jpg",
+      "alt_text": "Fast Charging Power Bank, view 2",
+      "is_primary": false,
+      "display_order": 1
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 15,
+    "fields": {
+      "product": 7,
+      "image": "products/led-ring-light-1.jpg",
+      "alt_text": "LED Ring Light, view 1",
+      "is_primary": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 16,
+    "fields": {
+      "product": 7,
+      "image": "products/led-ring-light-2.jpg",
+      "alt_text": "LED Ring Light, view 2",
+      "is_primary": false,
+      "display_order": 1
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 17,
+    "fields": {
+      "product": 8,
+      "image": "products/classic-cotton-t-shirt-1.jpg",
+      "alt_text": "Classic Cotton T-Shirt, view 1",
+      "is_primary": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 18,
+    "fields": {
+      "product": 8,
+      "image": "products/classic-cotton-t-shirt-2.jpg",
+      "alt_text": "Classic Cotton T-Shirt, view 2",
+      "is_primary": false,
+      "display_order": 1
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 19,
+    "fields": {
+      "product": 9,
+      "image": "products/everyday-denim-jeans-1.jpg",
+      "alt_text": "Everyday Denim Jeans, view 1",
+      "is_primary": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 20,
+    "fields": {
+      "product": 9,
+      "image": "products/everyday-denim-jeans-2.jpg",
+      "alt_text": "Everyday Denim Jeans, view 2",
+      "is_primary": false,
+      "display_order": 1
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 21,
+    "fields": {
+      "product": 10,
+      "image": "products/urban-canvas-backpack-1.jpg",
+      "alt_text": "Urban Canvas Backpack, view 1",
+      "is_primary": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 22,
+    "fields": {
+      "product": 10,
+      "image": "products/urban-canvas-backpack-2.jpg",
+      "alt_text": "Urban Canvas Backpack, view 2",
+      "is_primary": false,
+      "display_order": 1
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 23,
+    "fields": {
+      "product": 11,
+      "image": "products/minimalist-analog-watch-1.jpg",
+      "alt_text": "Minimalist Analog Watch, view 1",
+      "is_primary": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 24,
+    "fields": {
+      "product": 11,
+      "image": "products/minimalist-analog-watch-2.jpg",
+      "alt_text": "Minimalist Analog Watch, view 2",
+      "is_primary": false,
+      "display_order": 1
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 25,
+    "fields": {
+      "product": 12,
+      "image": "products/casual-canvas-sneakers-1.jpg",
+      "alt_text": "Casual Canvas Sneakers, view 1",
+      "is_primary": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 26,
+    "fields": {
+      "product": 12,
+      "image": "products/casual-canvas-sneakers-2.jpg",
+      "alt_text": "Casual Canvas Sneakers, view 2",
+      "is_primary": false,
+      "display_order": 1
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 27,
+    "fields": {
+      "product": 13,
+      "image": "products/non-stick-frying-pan-1.jpg",
+      "alt_text": "Non-Stick Frying Pan, view 1",
+      "is_primary": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 28,
+    "fields": {
+      "product": 13,
+      "image": "products/non-stick-frying-pan-2.jpg",
+      "alt_text": "Non-Stick Frying Pan, view 2",
+      "is_primary": false,
+      "display_order": 1
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 29,
+    "fields": {
+      "product": 14,
+      "image": "products/insulated-water-bottle-1.jpg",
+      "alt_text": "Insulated Water Bottle, view 1",
+      "is_primary": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 30,
+    "fields": {
+      "product": 14,
+      "image": "products/insulated-water-bottle-2.jpg",
+      "alt_text": "Insulated Water Bottle, view 2",
+      "is_primary": false,
+      "display_order": 1
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 31,
+    "fields": {
+      "product": 15,
+      "image": "products/airtight-food-storage-set-1.jpg",
+      "alt_text": "Airtight Food Storage Set, view 1",
+      "is_primary": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 32,
+    "fields": {
+      "product": 15,
+      "image": "products/airtight-food-storage-set-2.jpg",
+      "alt_text": "Airtight Food Storage Set, view 2",
+      "is_primary": false,
+      "display_order": 1
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 33,
+    "fields": {
+      "product": 16,
+      "image": "products/multipurpose-kitchen-knife-set-1.jpg",
+      "alt_text": "Multipurpose Kitchen Knife Set, view 1",
+      "is_primary": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 34,
+    "fields": {
+      "product": 16,
+      "image": "products/multipurpose-kitchen-knife-set-2.jpg",
+      "alt_text": "Multipurpose Kitchen Knife Set, view 2",
+      "is_primary": false,
+      "display_order": 1
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 35,
+    "fields": {
+      "product": 17,
+      "image": "products/adjustable-led-desk-lamp-1.jpg",
+      "alt_text": "Adjustable LED Desk Lamp, view 1",
+      "is_primary": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "catalog.productimage",
+    "pk": 36,
+    "fields": {
+      "product": 17,
+      "image": "products/adjustable-led-desk-lamp-2.jpg",
+      "alt_text": "Adjustable LED Desk Lamp, view 2",
+      "is_primary": false,
+      "display_order": 1
+    }
+  }
+]
