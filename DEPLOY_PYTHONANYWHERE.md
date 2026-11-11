@@ -17,8 +17,9 @@ Limits you must know about (free account):
 
 - One web app, at `yourusername.pythonanywhere.com`. No custom domain.
 - 512 MB disk and 100 CPU-seconds per day. This is enough for a small demo shop.
-- The site stops after 3 months unless you click **Run until 3 months from today** in
-  the **Web** tab. PythonAnywhere emails you a reminder. Put it in your calendar.
+- The free web app expires after 1 month. Each month, open the **Web** tab and click
+  **Run until 1 month from today**. PythonAnywhere emails you a reminder. Put it in your
+  calendar.
 - No Jupyter notebooks, and outgoing internet from the server is limited. The shop does
   not need outgoing internet. Bootstrap loads in the visitor's browser, not on the server.
 
@@ -223,4 +224,4 @@ Always read the **Error log** link in the Web tab first.
 | Photos missing | The `/media/` row is wrong, or the photos are not in the `media` folder. |
 | `ImproperlyConfigured: DJANGO_SECRET_KEY` | The `.env` file is missing or is not in `~/tanda-shop`. |
 | Changes do not show | Click **Reload** in the Web tab. |
-| Site disabled | Click **Run until 3 months from today** in the Web tab. |
+| Site disabled | Click **Run until 1 month from today** in the Web tab. |
